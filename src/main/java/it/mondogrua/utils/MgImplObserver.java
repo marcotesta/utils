@@ -1,10 +1,10 @@
 package it.mondogrua.utils;
 
-public abstract class Observer {
+public abstract class MgImplObserver {
 	
-	private Observable subject;
+	private MgImplObservable subject;
 
-	public Observer(Observable subject) {
+	public MgImplObserver(MgImplObservable subject) {
 		this.subject = subject;
 	}
 
