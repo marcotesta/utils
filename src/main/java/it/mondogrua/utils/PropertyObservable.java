@@ -5,18 +5,18 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class PropertyObservable extends SimpleStringProperty {
 
-    private ComboObservable mgObservable;
+    private ComboObservable comboObservable;
 
     public PropertyObservable(ComboObservable mgObservable) {
         super("");
-        this.mgObservable = mgObservable;
+        this.comboObservable = mgObservable;
     }
 
     public void changed() {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                set(mgObservable.getValue().toString());
+                set(comboObservable.getValue().toString());
             }
        });
     }
