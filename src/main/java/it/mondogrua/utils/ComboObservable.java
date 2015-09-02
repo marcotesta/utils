@@ -2,6 +2,7 @@ package it.mondogrua.utils;
 
 import javafx.beans.property.SimpleStringProperty;
 
+import javafx.beans.value.ChangeListener;
 
 
 public abstract class ComboObservable {
@@ -19,6 +20,10 @@ public abstract class ComboObservable {
         propertyObserver.bind(propertyObservable);
     }
 
+    public void addObserver(ChangeListener changeListener) {
+    	propertyObservable.addListener(changeListener);
+	}
+
     public void changed(String attribute) {
         javaUtilsObservable.changed(attribute);
         propertyObservable.changed();
@@ -29,5 +34,6 @@ public abstract class ComboObservable {
     }
 
     abstract public Object getValue();
+
 
 }
