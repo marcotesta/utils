@@ -18,27 +18,27 @@ public class PluggableAdaptor {
         this.parameters = someParameters;
     }
 
-
-    public void execute() {
+    public Object execute() {
         Method method;
         try {
             method = model.getClass().getMethod(action);
-            method.invoke(model, parameters);
+            Object o = method.invoke(model, parameters);
+            return o;
         } catch (SecurityException e) {
             // ...
-            int stop = 0;
+            return null;
         } catch (NoSuchMethodException e) {
             // ...
-            int stop = 0;
+            return null;
         } catch (IllegalAccessException e) {
             // ...
-            int stop = 0;
+            return null;
         } catch (IllegalArgumentException e) {
             // ...
-            int stop = 0;
+            return null;
         } catch (InvocationTargetException e) {
             // ...
-            int stop = 0;
+            return null;
         }
 
     }
