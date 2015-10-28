@@ -20,7 +20,7 @@ public abstract class ComboObservable {
         propertyObserver.bind(propertyObservable);
     }
 
-    public void addObserver(ChangeListener changeListener) {
+    public void addObserver(ChangeListener<? super String> changeListener) {
     	propertyObservable.addListener(changeListener);
 	}
 
@@ -32,6 +32,12 @@ public abstract class ComboObservable {
     public JavaUtilObservable asJavaUtilObservable() {
         return javaUtilsObservable;
     }
+    
+
+	public SimpleStringProperty asSimpleStringProperty() {
+		return propertyObservable;
+	}
+
 
     abstract public Object getValue();
 
