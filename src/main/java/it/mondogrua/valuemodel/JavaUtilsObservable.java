@@ -4,10 +4,10 @@ import java.util.Observable;
 
 public class JavaUtilsObservable extends Observable {
 	
-	private ValueModel count;
+	private ValueModel valueModel;
 
 	public JavaUtilsObservable(ValueModel count) {
-		this.count = count;
+		this.valueModel = count;
 	}
 	
     public void changed(String attribute) {
@@ -17,7 +17,7 @@ public class JavaUtilsObservable extends Observable {
     }
     
     public Object getValue() {
-        return count.getValue();
+        return valueModel.getValue();
     }
 
 }
